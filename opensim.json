@@ -1,0 +1,62 @@
+{
+  "pufferd":
+  {
+    "type": "opensim",
+    "display": "OpenSim",
+    "install":
+    {
+      "commands":
+      [
+        {
+          "files": "http://metaverseink.com/download/diva-r09000.zip",
+          "type": "download"
+        },
+        {
+          "commands":
+          [
+            "unzip -o diva-r09000.zip",
+            "rm diva-r09000.zip",
+            "chmod 755 bin/OpenSim.exe",
+            "chmod 755 bin/Configure.exe",
+            "./bin/Configure.exe"
+          ],
+          "type": "command"
+        }
+      ]
+    },
+    "run": {
+      "stop": "shutdown",
+      "pre": [],
+      "post": [],
+      "arguments": [],
+      "program": "bin/OpenSim.exe"
+    },
+    "environment": {
+      "type": "tty"
+    },
+    "data":
+    {
+      "port": {
+        "value": "8002",
+        "required": false,
+        "desc": "Server port. You shouldnt change this.",
+        "display": "Port",
+        "internal": false
+      },
+      "pport": {
+        "value": "8003",
+        "required": false,
+        "desc": "Private Server port. You shouldnt change this.",
+        "display": "Port",
+        "internal": false
+      },
+      "webport": {
+        "value": "9000",
+        "required": false,
+        "desc": "WIFI web register port. You can change this in the OpenSim.ini file.",
+        "display": "Port",
+        "internal": false
+      },
+    }
+  }
+}
