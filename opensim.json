@@ -16,9 +16,10 @@
           [
             "unzip -o diva-r09000.zip",
             "rm diva-r09000.zip",
-            "chmod 755 bin/OpenSim.exe",
-            "chmod 755 bin/Configure.exe",
-            "./bin/Configure.exe"
+            "mv -f /bin/* ."
+            "chmod 755 OpenSim.exe",
+            "chmod 755 Configure.exe",
+            "./Configure.exe"
           ],
           "type": "command"
         }
@@ -29,7 +30,7 @@
       "pre": [],
       "post": [],
       "arguments": [],
-      "program": "bin/OpenSim.exe"
+      "program": "OpenSim.exe"
     },
     "environment": {
       "type": "tty"
